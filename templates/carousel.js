@@ -44,11 +44,11 @@ templates.carousel = function(dom, div) {
         ].join("");
         $("#panel-story").append(tpl);
         _div.append([
-            '<div class="carButton precButton" style="opacity: 1;">',
-            '<a data-actual-slide="0" onclick="$(\'.carousel\').carousel(parseInt(this.getAttribute(\'data-actual-slide\'))-1);"> </a>',
+            '<div class="carButton precButton" style="opacity: 0.5;">',
+            '<a data-actual-slide="0" onclick="$(\'.carousel\').carousel(ks.getPrevAvailable(parseInt(this.getAttribute(\'data-actual-slide\'))));"> </a>',
             '</div>',
             '<div class="carButton nextButton" style="opacity: 1;">',
-            '<a data-actual-slide="0" onclick="$(\'.carousel\').carousel(parseInt(this.getAttribute(\'data-actual-slide\'))+1);"> </a></div>',
+            '<a data-actual-slide="0" onclick="$(\'.carousel\').carousel(ks.getNextAvailable(parseInt(this.getAttribute(\'data-actual-slide\'))));"> </a></div>',
             '<div class="progress">',
             '<div class="progress-bar progress-bar-custom" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">',
             '<span class="sr-only">0% Complete</span>',
@@ -65,15 +65,15 @@ templates.carousel = function(dom, div) {
         $(".carousel-inner .item").first().addClass("active");
         $(".carousel").carousel();
         $(".carousel").on('slide.bs.carousel', function(e) {
-            var direction = (e.direction === "right") ? -1 : +1;
             var actual_slide = parseInt($(".nextButton a").attr("data-actual-slide"));
+            var direction = (e.direction === "right") ? ks.getPrevAvailable(actual_slide) : ks.getNextAvailable(actual_slide);
             ks.zoomTo(e.relatedTarget.attributes["data-position"].value.split(",").map(Number),
                 e.relatedTarget.attributes["id"].value,
                 e.relatedTarget.attributes["data-featureid"].value,
                 panel_width());
-            _setProgress((parseInt(e.relatedTarget.attributes["id"].value.substring(1, 3))) / $(".item").length * 100);
-            $(".carButton a").attr("data-actual-slide", actual_slide + direction);
-            ks.audio("#c" + parseInt(actual_slide + direction + 1));
+            _setProgress(ks.getProgress(direction));
+            $(".carButton a").attr("data-actual-slide", direction);
+            ks.audio("#c" + parseInt(direction + 1));
 
         });
         // Show Photos in popup on click
@@ -214,6 +214,9 @@ templates.carousel = function(dom, div) {
     document.addEventListener("ks_click", function(e) {
         $('.carousel').carousel(e.detail.storyid - 1);
         $(".carButton a").attr("data-actual-slide", e.detail.storyid - 1);
+
+        var actual_slide = parseInt($(".nextButton a").attr("data-actual-slide"));
+        _setProgress(ks.getProgress(actual_slide));
     });
 
     _updateDom();

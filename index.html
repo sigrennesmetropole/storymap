@@ -3,7 +3,7 @@
   <head>    
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <base href="/storymap/"></base>
-    <title>Kartenn story</title>
+    <title>Cartostory Rennes Metropole</title>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,6 +21,8 @@
     <!-- TODO templates lazy loading" -->
     <script src="templates/carousel.js"></script>
     <script src="templates/list.js"></script>
+    <link rel="stylesheet" type="text/css" href="lib/slick-1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="lib/slick-1.8.1/slick/slick-theme.css"/>
   </head>
   <body>
     <div id="bandeau"></div> 
@@ -43,20 +45,31 @@
     <div id="bandeau" ></div>    
     <div id="map" class="map"></div>
     <div id="tools" class="btn-group-vertical btn-group-sm" role="group" aria-label="true" >
-        <button role="button" id="btn-zoomplus" href="#" onclick="ks.menuaction('zoomplus');" title="Zoomer" class="btn btn-default" tabindex="104" accesskey="4">
+        <button role="button" id="btn-zoomplus" href="#" onclick="ks.menuaction(event,'zoomplus');" title="Zoomer" class="btn btn-default" tabindex="104" accesskey="4">
              <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
         </button>
-        <button role="button" id="btn-home" href="#" onclick="ks.menuaction('home');" title="Accueil" class="btn btn-default" tabindex="104" accesskey="4">
+        <button role="button" id="btn-home" href="#" onclick="ks.menuaction(event,'home');" title="Accueil" class="btn btn-default" tabindex="104" accesskey="4">
              <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
         </button>
-        <button role="button" id="btn-zoommoins" href="#" onclick="ks.menuaction('zoommoins');" title="Dézoomer" class="btn btn-default" tabindex="104" accesskey="4">
+        <button role="button" id="btn-zoommoins" href="#" onclick="ks.menuaction(event,'zoommoins');" title="Dézoomer" class="btn btn-default" tabindex="104" accesskey="4">
              <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
         </button>
     </div>
-    <div  id="content-title" style="display: none;">
+    <div id="content-title" style="display: none;">
         <h1></h1>
         <h3></h3>
-    </div>   
+    </div>
+    <div id="content-legend" style="display: none;">
+        <div id="legend-btn">
+            <a onclick="$('#legend').toggle();" title="Afficher/masquer la légende">
+                <span class="glyphicon glyphicon-list"></span>
+            </a>
+        </div>
+        <div id="legend" style="display: none;">
+            <div id="categories-legend"></div>
+            <div id="layers-legend"></div>
+        </div>
+    </div>
     <div id="feature-info" class=""></div>    
     <div id="template" ></div>     
     <div  id="splash" style="display: none;"> 
@@ -106,7 +119,8 @@
                 <div class="modal-body" >
                     <div class="row">
                         <div class="col-md-12">
-                            <iframe src="" style="height: 400px; width: 100%;" scrolling="no" frameborder="0"></iframe>                            
+                            <!-- <iframe src="" class="popup_iframe" style="height: 400px; width: 100%;" scrolling="no" frameborder="0"></iframe> -->
+                            <iframe src="" class="popup_iframe" scrolling="no" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>
@@ -145,5 +159,7 @@
     </div>
     <script src="js/storymap.js"></script>
     <script src="lib/stretchy-navigation/js/main.js"></script>
+    <script type="text/javascript" src="lib/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/slick-1.8.1/slick/slick.min.js"></script>
   </body>
 </html>

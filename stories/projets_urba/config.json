@@ -1,0 +1,131 @@
+{
+	"theme": {
+		"css": "projets_urba.css"
+	},
+	"tooltip": {
+		"fields": ["nom_ope"]
+	},
+	"map": {
+		"center": [-186000, 6125900],
+		"zoom": 14,
+		"width": "100%",
+		"overview": false,
+		"url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+		"animation": false
+	},
+	"backgroundlayer": {
+                "type": "WMTS",
+                "url": "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
+                "layer": "ref_fonds:pvci_simple_gris",
+                "format": "image/png",
+                "tilematrixset": "EPSG:3857",
+                "style": "_null"
+        },
+	"extralayers": [
+		{
+			"showLegend": true,
+			"legendTitle": "ZAC sur Rennes Métropole",
+			"type": "WMS",
+			"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+			"layer": "urba_fonc:zac",
+			"style": "urba_fonc:zac_bordure_plg",
+			"format": "image/png",
+			"opacity": 1
+		}
+	],
+	"data": {
+		"title": "Les grands projets urbains",
+		"subtitle": "",
+		"template": {
+			"name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"} 
+		},
+		"url": "stories/projets_urba/projets_urba.geojson",
+        "id":"numero",
+		"orderby": "numero",
+		"fields": [],
+		"tpl": "stories/projets_urba/projets_urba.mst",
+		"analyse": {
+			"type": "categories",
+			"field": "categorie",
+			"values": ["Espace public","Projet architectural","Projet d'aménagement","Site à l'étude","Station métro"],
+			"styles": [
+				{
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_vert.png",
+						"scale": 0.30
+					}
+                },
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_orange.png",
+						"scale": 0.30
+					}
+				},
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu.png",
+						"scale": 0.30
+					}
+				},
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_vert-eau.png",
+						"scale": 0.30
+					}
+				},
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_rouge.png",
+						"scale": 0.30
+					}
+				}
+			]
+		},
+		"hightlightstyle": {
+			"icon": {
+				"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_violet.png",
+				"scale": 0.30
+			}
+		}
+	},
+	"extradata": {
+		"url": "projets_urba.csv",
+		"linkfield": "numero"
+	}
+
+}

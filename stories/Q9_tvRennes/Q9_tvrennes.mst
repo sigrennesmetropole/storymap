@@ -1,0 +1,116 @@
+<!-- Style CSS du template se situe dans le fichier .css -->
+
+	<div class="item" >
+		<h4 class="title-feature">{{libelle}} {{sigle}}</h4>
+		<p class="text-feature">
+			{{#type}}<span style="font-family:'roboto_bold'"> Catégorie :</span> <img class="icone_categ" src="" id=categ{{{numero}}} style="width:2%" >{{{type}}}<br/>{{/type}}
+			{{#description}}<br/><span style="font-family:'roboto_bold'"> Description :</span> {{{description}}}<br/>{{/description}}
+		</p>
+
+		{{#lien_internet}}<p align="center"><a class="ks-btn" title="Ouvrir dans une nouvelle fenêtre" href="{{lien_internet}}" target="_blank">En savoir plus</a></p>{{/lien_internet}}
+
+        <div class="video-container">
+           {{#video1}}
+                <iframe src="{{video1}}" class="slick-slide-iframe" style="height:400px;" allowfullscreen="" {{#creditvideo1}}data-sources="{{creditvideo1}}"{{/creditvideo1}} />
+                {{#creditvideo1}}<div class="text-credit">{{creditvideo1}}</div>{{/creditvideo1}}
+           {{/video1}}
+        </div>
+        <div class="podcast-container">
+           {{#podcast}}
+                <iframe src="{{podcast}}" class="slick-slide-iframe" style="height:400px;" allowfullscreen="" {{#creditvideo1}}data-sources="{{creditvideo1}}"{{/creditvideo1}} />
+                {{#creditpodcast}}<div class="text-credit">{{creditpodcast}}</div>{{/creditpodcast}}
+           {{/podcast}}
+        </div>
+
+        <section class="slide-feature">
+          <div id="slideauto{{{numero}}}" >
+              {{#image1}}<div class="thumbnail iframe-popup slide-feature{{{numero}}}" src="" onclick='this.setAttribute("src",getpopupslide("slideauto{{{numero}}}", {{{numero}}}, this.getAttribute("data-slick-index"), "stories/projets_urba/projets_urba.css"));' >
+                  <img src="{{image1}}" class="slick-slide-image" style="height: 150px;" {{#credit1}}data-sources="{{credit1}}"{{/credit1}} />
+                  {{#credit1}}<div class="text-credit">{{credit1}}</div>{{/credit1}}
+                  {{#legende1}}<div class="text-credit text-align-left">{{legende1}}</div>{{/legende1}}
+                  </div>{{/image1}}
+              {{#image2}}<div class="thumbnail iframe-popup slide-feature{{{numero}}}" src="" onclick='this.setAttribute("src",getpopupslide("slideauto{{{numero}}}", {{{numero}}}, this.getAttribute("data-slick-index"), "stories/projets_urba/projets_urba.css"));' >
+                  <img src="{{image2}}" class="slick-slide-image" style="height: 150px;" {{#credit2}}data-sources="{{credit2}}"{{/credit2}} />
+                  {{#credit2}}<div class="text-credit">{{credit2}}</div>{{/credit2}}
+                  {{#legende2}}<div class="text-credit text-align-left">{{legende2}}</div>{{/legende2}}
+                  </div>{{/image2}}
+              {{#image3}}<div class="thumbnail iframe-popup slide-feature{{{numero}}}" src="" onclick='this.setAttribute("src",getpopupslide("slideauto{{{numero}}}", {{{numero}}}, this.getAttribute("data-slick-index"), "stories/projets_urba/projets_urba.css"));' >
+                  <img src="{{image3}}" class="slick-slide-image" style="height: 150px;" {{#credit3}}data-sources="{{credit3}}"{{/credit3}} />
+                  {{#credit3}}<div class="text-credit">{{credit3}}</div>{{/credit3}}
+                  {{#legende3}}<div class="text-credit text-align-left">{{legende3}}</div>{{/legende3}}
+                  </div>{{/image3}}
+              {{#image4}}<div class="thumbnail iframe-popup slide-feature{{{numero}}}" src="" onclick='this.setAttribute("src",getpopupslide("slideauto{{{numero}}}", {{{numero}}}, this.getAttribute("data-slick-index"), "stories/projets_urba/projets_urba.css"));' >
+                  <img src="{{image4}}" class="slick-slide-image" style="height: 150px;" {{#credit4}}data-sources="{{credit4}}"{{/credit4}} />
+                  {{#credit4}}<div class="text-credit">{{credit4}}</div>{{/credit4}}
+                  {{#legende4}}<div class="text-credit text-align-left">{{legende4}}</div>{{/legende4}}
+                  </div>{{/image4}}
+              {{#image5}}<div class="thumbnail iframe-popup slide-feature{{{numero}}}" src="" onclick='this.setAttribute("src",getpopupslide("slideauto{{{numero}}}", {{{numero}}}, this.getAttribute("data-slick-index"), "stories/projets_urba/projets_urba.css"));' >
+                  <img src="{{image5}}" class="slick-slide-image" style="height: 150px;" {{#credit5}}data-sources="{{credit5}}"{{/credit5}} />
+                  {{#credit5}}<div class="text-credit">{{credit5}}</div>{{/credit5}}
+                  {{#legende5}}<div class="text-credit text-align-left">{{legende5}}</div>{{/legende5}}
+                  </div>{{/image5}}
+          </div>
+        </section>
+    </div>
+
+<script>
+    
+// selection de l'icone  de categorie
+/*function init_categ(element, valeur) {
+    var url;
+    switch(valeur) {
+        case "Animation":
+            url="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_vert.png";
+            break;
+        case "Expo":
+            url="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_orange.png";
+            break;
+        case "Concerts":
+            url="https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu.png";
+            break;
+        default:
+            url="";
+    }
+    element.setAttribute("src", url);
+}
+
+init_categ(document.getElementById("categ{{{numero}}}"),"{{{type}}}");
+*/  
+ 
+// defilement des images/videos
+    $(document).ready(function(){
+       var nbSlides = document.getElementsByClassName("slide-feature{{{numero}}}").length;
+       console.log('test', nbSlides);
+       if (nbSlides > 1){
+          $('#slideauto{{{numero}}}').slick({
+              dots: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              autoplay: true,
+              infinite: false,
+              arrows : true,
+              autoplaySpeed:2000,
+              centerMode: true,
+              variableWidth: true,
+              centerPadding: '60px',
+              lazyLoad: 'ondemand'
+          });
+        }
+
+        if (nbSlides == 1) {
+          var image = document.getElementsByClassName("slide-feature{{{numero}}}")[0].getElementsByTagName('img')[0];
+          var credits = document.getElementsByClassName("slide-feature{{{numero}}}")[0].getElementsByClassName('text-credit')[0] || '';
+          var legend = document.getElementsByClassName("slide-feature{{{numero}}}")[0].getElementsByClassName('text-credit')[1] || '';
+          image.removeAttribute('style');
+          legend.style.maxWidth = '100%';
+          legend.style.textAlign = 'center';
+          var slideElem = $('.slide-feature{{{numero}}}').closest('.slide-feature');
+          slideElem.empty();
+          slideElem.append(image);
+          slideElem.append(credits);
+          slideElem.append(legend);
+        }
+    });
+
+    
+</script>

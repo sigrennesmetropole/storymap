@@ -3,3 +3,11 @@ RewriteEngine on
 #RewriteCond %{REQUEST_URI} !^/css/
 RewriteRule ^(.*)/(.)?$ index.html [L]
 #RewriteRule ^(.*)/(.)?$ index.php?config=$1 [L]
+
+# Allow font assets to be used across domains and subdomains -> Need to have the module headers_module activated in Apache
+<FilesMatch "\.(ttf|otf|eot|woff|woff2)$">
+  <IfModule mod_headers.c>
+     Header set Access-Control-Allow-Origin "*"
+  </IfModule>
+</FilesMatch>
+

@@ -1,0 +1,80 @@
+{
+        "theme": {
+                "css": "Q9_tvrennes.css"
+        },
+        "tooltip": {
+                "fields": ["libelle"]
+        },
+        "map": {
+                "center": [-189941, 6123780],
+                "zoom": 13,
+                "width": "100%",
+                "overview": false,
+                "url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+                "animation": false
+        },
+        "backgroundlayer": {
+                "type": "WMTS",
+                "url": "https://public.sig.rennesmetropole.fr/geowebcache/service/wmts?service/wmts?",
+                "layer": "ref_fonds:pvci_simple_gris",
+                "format": "image/png",
+                "tilematrixset": "EPSG:3857",
+                "style": "_null"
+        },
+        "extralayers": [
+                {
+                        "showLegend": false,
+                        "legendTitle": "Limite du quartier",
+                        "type": "WMS",
+                        "url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+                        "layer": "ladm_terri:quartier",
+                        "sld": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/limites_quartier.sld",
+                        "filter": "nuquart=9",
+                        "format": "image/png",
+                        "opacity": 1
+                }
+        ],
+        "data": {
+                "title": "[ICI CLEUNAY / LA COURROUZE]",
+                "subtitle": "",
+                "template": {
+                        "name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"}
+                },
+                "url": "stories/Q9_tvRennes/Q9_tvrennes.geojson",
+                "id":"numero",
+                "orderby": "numero",
+                "fields": [],
+                "tpl": "stories/Q9_tvRennes/Q9_tvrennes.mst",
+                "analyse": {
+                        "type": "single",
+                        "field": "",
+                        "values": [],
+                        "styles": [
+                            {
+                                "fill": {
+                                    "color": "rgba(206,0,0,0.7)"
+                                },
+                                "stroke": {
+                                    "color": "rgba(206,0,0,0.2)",
+                                    "width": 2
+                                },
+                                "icon": {
+                                    "src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu_smap.png",
+                                    "scale": 0.30
+                                }
+                            }
+                        ]
+                },
+                "hightlightstyle": {
+                        "icon": {
+                                "src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_violet_smap.png",
+                                "scale": 0.30
+                        }
+                }
+        },
+        "extradata": {
+                "url": "Q9_tvrennes.csv",
+                "linkfield": "numero"
+        }
+
+}

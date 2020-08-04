@@ -1,0 +1,104 @@
+{
+	"theme": {
+		"css": "Q9_tvrennes.css"
+	},
+	"tooltip": {
+		"fields": ["libelle"]
+	},
+	"map": {
+		"center": [-189941, 6123780],
+		"zoom": 16,
+		"width": "100%",
+		"overview": false,
+		"url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+		"animation": true
+	},
+	"backgroundlayer": {
+		"type": "WMS",
+		"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+		"layer": "ref_fonds:pvci_light_gris",
+		"format": "image/png"
+	},
+	"extralayers": [
+		{
+			"showLegend": true,
+			"legendTitle": "Limite du quartier",
+			"type": "WMS",
+			"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+			"layer": "ladm_terri:quartier",
+			"sld": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/limites_quartier.sld",
+            "filter"="nuquart = 9",
+			"format": "image/png",
+			"opacity": 1
+		}
+	],
+	"data": {
+		"title": "Nom de l'événement",
+		"subtitle": "",
+		"template": {
+			"name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"} 
+		},
+		"url": "stories/Q9_tvRennes/Q9_tvrennes.geojson",
+        "id":"numero",
+		"orderby": "numero",
+		"fields": [],
+		"tpl": "stories/Q9_tvRennes/Q9_tvrennes.mst",
+		"analyse": {
+			"type": "categories",
+			"field": "categorie",
+			"values": ["Animation","Expo","Concerts"],
+			"styles": [
+				{
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_vert.png",
+						"scale": 0.30
+					}
+                },
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_orange.png",
+						"scale": 0.30
+					}
+				},
+                {
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu.png",
+						"scale": 0.30
+					}
+				}
+			]
+		},
+		"hightlightstyle": {
+			"icon": {
+				"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_violet.png",
+				"scale": 0.30
+			}
+		}
+	},
+	"extradata": {
+		"url": "Q9_tvrennes.csv",
+		"linkfield": "numero"
+	}
+
+}

@@ -25,8 +25,53 @@
  }
  #content-title h1 {
      font-size: 40px;
-     line-height: 0.9;
+     line-height: 1.1;
  }
+
+ /* AJOUT CII 31-01-2019 :: AJOUT LEGENDE */
+ #content-legend {
+     position: fixed;
+     top: 100px;
+     left: 20px;
+     max-width: 235px;
+ }
+ #legend-btn {
+     width: 35px;
+     height: 35px;
+     background-color: #4D4D4D;
+     cursor: pointer;
+ }
+ #legend-btn span {
+     color: #fff;
+     padding: 10px;
+ }
+ #legend {
+     background-color: rgba(255, 255, 255, 0.75);
+     padding: 5px 10px;
+ }
+ #legend .legend-div {
+     margin-bottom: 5px;
+     font-size: 12px;
+ }
+ #legend .clickable-legend {
+     cursor: pointer;
+ }
+ #legend .legend-title {
+     font-size: 15px;
+     text-transform: uppercase;
+     font-weight: bold;
+     padding: 5px 0;
+ }
+ #legend .legend-icon {
+     height: 20px;
+     width: auto;
+     margin-right: 15px;
+ }
+ #legend .hidden-on-map {
+     opacity: 0.5;
+ }
+ /* FIN AJOUT CII 31-01-2019 :: AJOUT LEGENDE */
+
  #feature-info {
      position: absolute;
      height: 1px;
@@ -53,3 +98,76 @@ a#btn-home, a#btn-extent, a#btn-infos, a#btn-share {
 header {
     display: none;
 }
+
+.slick-slide {
+    overflow: hidden;
+    transition: none !important;
+}
+
+.video-container, .podcast-container {
+    width: 90%;
+    margin: 0 auto 20px;
+}
+
+ @media (max-width: 768px) {
+     #content-legend {
+         top: 20px;
+     }
+
+     #tools {
+         top: 30%;
+     }
+
+     .ol-attribution {
+         display: none;
+     }
+
+     .title-feature {
+         margin-top: 20px;
+     }
+
+     .slide-feature {
+         margin-bottom: 50px !important;
+     }
+
+     #template .precButton {
+         bottom: 52% !important;
+     }
+
+     #template .nextButton {
+         bottom: 52% !important;
+         left: unset !important;
+         right: 20% !important;
+     }
+
+     .slide-feature-popup .slick-next {
+         right: -15px !important;
+     }
+
+     .slide-feature-popup .slick-prev {
+         left: -15px !important;
+     }
+
+     .slide-feature-popup .slick-prev, .slide-feature-popup .slick-next {
+         z-index: 1000;
+     }
+
+     .slide-feature-popup .slick-dots {
+         padding-bottom: 15px;
+     }
+
+     .slide-feature .slick-list {
+         padding: 0!important;
+     }
+
+     .modal-body {
+         padding: 15px 0;
+     }
+
+     .iframe-popup {
+        margin-left: -10px!important;
+     }
+ }
+
+ div.slick-slider { width: 1px; min-width: 100%; *width: 100%; }
+

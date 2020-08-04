@@ -1,59 +1,75 @@
-{   "splash": {        
-        "iframe": "http://172.16.10.39/ws/demo/splash_enr.html"
-    },
-    "theme": {"css":"stories/enr_reg/enr_reg.css"},
-    "tooltip" : {"fields": ["nom_region"]},
-	"map": {
-		"center": [-220750.13768758904,6144925.57790189],
-		"zoom": 11,
-		"width": "100%",
-        "overview": true,
-        "url" : "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
-        "animation": true
+{
+	"theme": {
+		"css": "stories/projets_urba/projets_urba.css"
 	},
-	"data": {
-        "title": "La production d'énergie renouvelable en France",
-        "subtitle": "Démo",
-        "template": {"name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"} },
-		"url": "http://geobretagne.fr/geoserver/mig/wfs?request=getFeature&typename=mig:regions_nouvelles&outputFormat=application/json&srsName=EPSG:3857",
-        "orderby": "order",
-		"fields": [{
-                "name": "nom_region",
-				"type": "title"
-		}, 
+	"tooltip": {
+		"fields": ["nom_ope"]
+	},
+	"map": {
+		"center": [-186000, 6125900],
+		"zoom": 16,
+		"width": "100%",
+		"overview": false,
+		"url": "https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+		"animation": false
+	},
+	"backgroundlayer": {
+		"type": "WMS",
+		"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+		"layer": "ref_fonds:pvci_light_gris",
+		"format": "image/png"
+	},
+	"extralayers": [
 		{
-			"name":"iframe",
-			"type":"iframe"	
-		}],
-        "analyse": {
-            "type": "single",
+			"type": "WMS",
+			"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+			"layer": "urba_fonc:zac",
+			"style": "urba_fonc:zac_bordure_plg",
+			"format": "image/png",
+			"opacity": 1
+		}
+	],
+	"data": {
+		"title": "Les grands projets urbains de Rennes",
+		"subtitle": "sous-titre à définir",
+		"template": {
+			"name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"} 
+		},
+		"url": "stories/projets_urba/projets_urba.geojson",
+        "id":"numero",
+		"orderby": "numero",
+		"fields": [],
+		"tpl": "stories/projets_urba/projets_urba.mst",
+		"analyse": {
+			"type": "single",
 			"field": "",
 			"values": [],
 			"styles": [
-                {
-                    "fill": {
-                        "color": "rgba(206,227,147,0)"
-                    },
-                    "stroke": {
-                        "color": "rgba(206,227,147,0.2)",
-                        "width": 2
-                    }
-                }
-            ]
-		},		
+				{
+					"fill": {
+						"color": "rgba(206,0,0,0.7)"
+					},
+					"stroke": {
+						"color": "rgba(206,0,0,0.2)",
+						"width": 2
+					},
+					"icon": {
+						"src": "http://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu.png",
+						"scale": 0.30
+					}
+				}
+			]
+		},
 		"hightlightstyle": {
-			"fill": {
-                "color": "rgba(206,227,147, 0.6)"
-            },
-			"stroke": {
-                "color": "rgba(206,227,147,1.0)",
-                "width": 4
-            }
+			"icon": {
+				"src": "http://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_violet.png",
+				"scale": 0.30
+			}
 		}
 	},
 	"extradata": {
-		"url": "stories/enr_reg/enr_region.csv",
-		"linkfield" : "id"
+		"url": "stories/projets_urba/projets_urba.csv",
+		"linkfield": "numero"
 	}
 
 }

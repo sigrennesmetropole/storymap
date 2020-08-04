@@ -1,0 +1,122 @@
+﻿{
+	"type" : "FeatureCollection",
+	"name" : "Q9_tvrennes",
+	"crs" : {
+		"type" : "name",
+		"properties" : {
+			"name" : "EPSG:3857"
+		}
+	},
+	"features" : [
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -190133.35,6123520.55 ]
+			},
+			"properties" : {
+				"numero" : 1
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -188917.22,6124068.8 ]
+			},
+			"properties" : {
+				"numero" : 2
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -194191.25,6123138.26 ]
+			},
+			"properties" : {
+				"numero" : 3
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -190261.58,6123642.64 ]
+			},
+			"properties" : {
+				"numero" : 4
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189054.34,6123254.42 ]
+			},
+			"properties" : {
+				"numero" : 5
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189890.69,6123566.31 ]
+			},
+			"properties" : {
+				"numero" : 6
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -190623.42,6123641.55 ]
+			},
+			"properties" : {
+				"numero" : 7
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189967.73,6123748.62 ]
+			},
+			"properties" : {
+				"numero" : 8
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -189730.72,6123269.44 ]
+			},
+			"properties" : {
+				"numero" : 9
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -190179.64,6123183.16 ]
+			},
+			"properties" : {
+				"numero" : 10
+			}
+		},
+		{
+			"type" : "Feature",
+			"geometry" : {
+				"type" : "Point",
+				"coordinates" : [ -188475.46,6124765.04 ]
+			},
+			"properties" : {
+				"numero" : 11
+			}
+		}
+	]
+}

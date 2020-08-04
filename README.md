@@ -29,7 +29,8 @@ Pour créer une nouvelle storymap, il suffit de créer un dossier dans le réper
     tooltip :{},
     map : {},
     data : {},
-    extradata: {}    
+    extradata: {},
+    extralayers: {}    
   }
 ```
 
@@ -345,3 +346,26 @@ Exemple 3 :
        }
   }
 ```
+
+#### extralayers
+  * prototype
+      .`extralayers`: []
+  
+  * Tableau des couches supplémentaires que l'on souhaite ajouter.
+  * Les propriétés "showLegend" et "legendTitle" permettent de choisir d'afficher ou non la légende de la couche et le titre de cette légende.
+  
+  Exemple :
+```  
+"extralayers": [
+		{
+			"showLegend": true,
+			"legendTitle": "ZAC sur Rennes Métropole",
+			"type": "WMS",
+			"url": "https://public.sig.rennesmetropole.fr/geoserver/wms",
+			"layer": "urba_fonc:zac",
+			"style": "urba_fonc:zac_bordure_plg",
+			"format": "image/png",
+			"opacity": 1
+		}
+	]
+```	
