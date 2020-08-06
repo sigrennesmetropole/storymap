@@ -757,6 +757,8 @@ function getpopupslide(idSlider, id, posSlide, urlCSSlocal){
     codeHTML +='<section class="slide-feature-popup"><div id="slidepopup' + id + '" >';
     for (i = 0, len = listURL.length; i < len; i++ ) {
         var contenu = listURL[i].innerHTML;
+        // prise en compte du nom de serveur
+        contenu = contenu.replace(/"stories\/(.*)" class/, '"'+serveurlocal+'stories/$1" class');
         codeHTML += "<div>";
         if (contenu.substring("allowfullscreen",0)>=0){
             //codeHTML += contenu.replace(/style="(.*)px;"/, 'style="height:340px;width:550px;"');
