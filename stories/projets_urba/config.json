@@ -34,7 +34,7 @@
 		}
 	],
 	"data": {
-		"title": "Les grands projets urbains",
+		"title": "Les projets urbains",
 		"subtitle": "",
 		"template": {
 			"name": "carousel", "options": {"width":"50%", "color":"#7f8c8d"} 
@@ -118,7 +118,7 @@
 		},
 		"hightlightstyle": {
 			"icon": {
-				"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_violet.png",
+				"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_rennes2030_2.png",
 				"scale": 0.30
 			}
 		}
