@@ -7,7 +7,7 @@
 	},
 	"map": {
 		"center": [-186000, 6125900],
-		"zoom": 14,
+		"zoom": 13,
 		"width": "100%",
 		"overview": false,
 		"url": "http://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
