@@ -2,9 +2,16 @@
 
 	<div class="item" >
 		<h4 class="title-feature">{{TITRE}} </h4>
+        <div class="rm-reperes">
+            {{#moa}} <span class="rm-clerepere">Maîtrise d'ouvrage : </span>{{{moa}}}{{/moa}}
+            {{#moe}} / <span class="rm-clerepere">Maîtrise d'oeuvre : </span>{{{moe}}}{{/moe}}
+            {{#surface}} / <span class="rm-clerepere">Surface : </span>{{{surface}}}{{/surface}}
+            {{#programme}} / <span class="rm-clerepere">Programmation : </span>{{{programme}}}{{/programme}}
+        </div>
 		<p class="text-feature">
 			{{#categorie}}<span class="rm-soustitre"> Catégorie :</span> <img class="icone_categ" src="" id=categ{{{numero}}} style="width:2%" > {{{categorie}}}<br/>{{/categorie}}
         </p>
+        
         <p class="text-feature">
 			{{#CHAPEAU}}{{{CHAPEAU}}}<br/>{{/CHAPEAU}}
         </p>
@@ -64,16 +71,6 @@
             </span><br/><br/>{{/plus_info}}
         </p>
         
-
-        <p class="text-feature">
-			<!-- <span class="rm-soustitre"> Repères : </span> -->
-            <span class="rm-reperes">
-                {{#moa}} <span class="rm-clerepere">Maîtrise d'ouvrage : </span>{{{moa}}}{{/moa}} /
-                {{#moe}} <span class="rm-clerepere">Maîtrise d'oeuvre : </span>{{{moe}}}{{/moe}} / 
-                {{#surface}} <span class="rm-clerepere">Surface : </span>{{{surface}}}{{/surface}} /
-                {{#programme}} <span class="rm-clerepere">Programmation : </span>{{{programme}}}{{/programme}}
-            </span>
-        </p>
     </div>
 
 <script>

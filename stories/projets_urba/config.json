@@ -31,7 +31,17 @@
 			"style": "urba_fonc:zac_bordure_plg",
 			"format": "image/png",
 			"opacity": 1
-		}
+		},
+        {
+            "showLegend": true,
+			"legendTitle": "Communes",
+			"type": "WMS",
+			"url": "https://public.sig.rennesmetropole.fr/geoserver/eq_poi/ows",
+			"layer": "v_sitorg_organisme",
+			"style": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/sld/organisme_orange.sld",
+			"format": "image/png",
+			"opacity": 1
+        }
 	],
 	"data": {
 		"title": "Les projets urbains",
@@ -47,7 +57,7 @@
 		"analyse": {
 			"type": "categories",
 			"field": "categorie",
-			"values": ["Espace public","Projet architectural","Projet d'aménagement","Site à l'étude","Station métro"],
+			"values": ["Espace public","Projet d'aménagement"],
 			"styles": [
 				{
 					"fill": {
@@ -71,46 +81,7 @@
 						"width": 2
 					},
 					"icon": {
-						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_orange.png",
-						"scale": 0.30
-					}
-				},
-                {
-					"fill": {
-						"color": "rgba(206,0,0,0.7)"
-					},
-					"stroke": {
-						"color": "rgba(206,0,0,0.2)",
-						"width": 2
-					},
-					"icon": {
 						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_bleu.png",
-						"scale": 0.30
-					}
-				},
-                {
-					"fill": {
-						"color": "rgba(206,0,0,0.7)"
-					},
-					"stroke": {
-						"color": "rgba(206,0,0,0.2)",
-						"width": 2
-					},
-					"icon": {
-						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_vert-eau.png",
-						"scale": 0.30
-					}
-				},
-                {
-					"fill": {
-						"color": "rgba(206,0,0,0.7)"
-					},
-					"stroke": {
-						"color": "rgba(206,0,0,0.2)",
-						"width": 2
-					},
-					"icon": {
-						"src": "https://public.sig.rennesmetropole.fr/ressources/img/mviewer/marker_rouge.png",
 						"scale": 0.30
 					}
 				}
