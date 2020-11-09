@@ -139,7 +139,8 @@
 
 /* button */
 .carButton {
-    background-color: rgba(153, 153, 153, 0);
+    display:none;
+    /*background-color: rgba(153, 153, 153, 0);*/
 }
 .precButton{
     bottom: 4%!important;
@@ -282,6 +283,8 @@
 a {
   color: #032E46;
   font-weight: bold;
+  text-decoration: underline;
+  text-decoration-style: dotted;
 }
 a:hover{
 	color: #032E46!important;
@@ -373,7 +376,8 @@ a:hover{
 
 .rm-soustitre{
     font-family:"vistaSansOT_bold";
-    color:#555;
+    /*color:#555;*/
+    color:rgb(230, 51, 76, 1);
     font-size:16px;
 }
 .text-actu{
@@ -403,6 +407,9 @@ a:hover{
     font-family:"vistaSansOT_regular";
     color:#555;
     font-size:12px;
+    padding-top: 5px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 .rm-clerepere{
     font-family: "vistaSansOT_bold";
